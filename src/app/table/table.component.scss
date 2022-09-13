@@ -1,0 +1,30 @@
+@import "../../styles.scss";
+.table {
+    width: clamp(200px, 100%, 927px);
+    margin: 20px auto;
+    font-size: 1.3rem;
+    font-family: sans-serif;
+    &__head{
+        td {
+            outline: 2px solid $border-color;
+            text-align: center;
+            padding: 5px;
+            }
+    }
+    &__body{
+        &__row{
+            td{
+                outline: 2px solid $border-color;
+                padding-left: 10px;
+                .flex-icons {
+                    display: flex;
+                    justify-content: space-around;
+                    .material-symbols-outlined{
+                        cursor: pointer;
+                        color: $base-color;
+                    }
+                }
+            }
+        }
+    }
+}

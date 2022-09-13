@@ -1,0 +1,86 @@
+@import "../../styles.scss";
+.modal {
+    color: $text-color;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border: 2px solid $border-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f4f4;
+    aspect-ratio: 16/5;
+    width: clamp(200px, 100%, 923px);
+    font-size: 1.3rem;
+    font-family: sans-serif;
+    h3 {
+        margin: inherit;
+    }
+    form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            column-gap: 10px;
+            width: 348px;
+            flex-direction: column;
+        }
+        .grid {
+            display: grid;
+            grid-template-areas: "a b";
+            gap: 25px 110px;
+            justify-items: start;
+        }
+        .value {
+            width: 215px;
+            overflow: auto;
+        }
+        input[type='text']{
+            @include input-text;
+            &:focus-visible {
+                outline: inherit;
+            }
+        }
+        input[type='range']{
+            -webkit-appearance: none;
+            appearance: none;
+            background: $base-color;
+            height: 5px;
+            cursor: pointer;
+            border-radius: 5px; 
+            &::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                border: 1px solid $base-color;
+                height: 15px;
+                width: 15px;
+                border-radius: 50%;
+                background: $base-color;
+                cursor: pointer;
+            }          
+        }
+        .form__submit {
+            text-align: center;
+            width: -moz-fit-content;
+            width: fit-content;
+            display: flex;
+            column-gap: 11px;
+            margin-right: 8px;
+            input[type='submit'] , input[type='button']{
+                @include btn;
+                transition-duration: 500ms;
+            }
+            input[type='submit']:disabled{
+                cursor: not-allowed;
+                background-color: $disabled-button;
+            }
+        }
+    }
+}

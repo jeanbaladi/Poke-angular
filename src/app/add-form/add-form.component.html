@@ -1,0 +1,29 @@
+<div class="box" id="add">
+    <h3>Nuevo pokemon</h3>
+    <form class="onSubmit" [formGroup]="form" (ngSubmit)="addPokemon()" >
+        <div class="grid">
+            <div class="form__input">
+                <label>Nombre:</label>
+                <input type="text" name="" id="" formControlName="name" required>
+            </div>
+            <div class="form__input">
+                <label>Ataque:</label>
+                <input type="range" min="0" max="100" #attack formControlName="attack" required>
+                <label>{{attack.value}}</label>
+            </div>
+            <div class="form__input">
+                <label>Imagen:</label>
+                <input type="text" name="" id="" formControlName="image" required>
+            </div>
+            <div class="form__input">
+                <label>Defensa:</label>
+                <input type="range" min="0" max="100" #defense  formControlName="defense" required>
+                <label>{{defense.value}}</label>
+            </div>
+        </div>
+        <div class="form__submit">
+            <button type="submit" [disabled]="!form.valid" ><span class="material-symbols-outlined">save</span>Guardar</button>
+            <button type="reset" value="Cancelar"><span class="material-symbols-outlined">close</span>Cancelar</button>
+        </div>
+    </form>
+</div>

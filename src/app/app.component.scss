@@ -1,0 +1,10 @@
+.container {
+    width: 80vw;
+    margin: 0 auto;
+    .title {
+        width: clamp(200px, 100%, 927px);
+        margin: 0 auto;
+        font-size: 1.3rem;
+        font-family: sans-serif;
+    }
+}

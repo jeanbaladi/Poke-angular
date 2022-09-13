@@ -1,0 +1,33 @@
+<app-search (newItemEvent)="searchResults($event)"></app-search>
+<div>
+    <table  class="table">
+        <thead class="table__head">
+            <td>Nombre</td>
+            <td>Imagen</td>
+            <td>Ataques</td>
+            <td>Defensa</td>
+            <td>Acciones</td>
+        </thead>
+        <tbody class="table__body" *ngFor="let element of service.arrayPokemons">
+            <tr class="table__body__row">
+                <td>{{element.name}}</td>
+                <td [ngStyle]="{'text-align' :'center'}">
+                    <img [src]="element.image" (error)="brokenImg($event)" width="50">
+                </td>
+                <td>{{element.attack}}</td>
+                <td>{{element.defense}}</td>
+                <td>
+                    <div class="flex-icons">
+                        <span class="material-symbols-outlined" (click)="editPokemon(element.id)">
+                            border_color
+                        </span>
+                        <span class="material-symbols-outlined" (click)="deletePokemon(element.id)">
+                            delete_forever
+                        </span>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<app-modal  *ngIf="id" [id]="id" (newItemEvent)="addItem($event)"></app-modal>

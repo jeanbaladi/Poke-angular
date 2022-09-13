@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+$base-color : #7740f1;
+$disabled-button : #d2d0f8;
+$border-color : #c6d2d9;
+$text-btn-color : #e6e7fd;
+$text-color : #2f3739;
+
+@mixin btn {
+    background-color: $base-color;
+    aspect-ratio: 17/6;
+    height: 45px;
+    border: inherit;
+    border-radius: 5px;
+    color: $text-btn-color;
+    padding: 1px 15px;
+    box-sizing: content-box;
+    cursor: pointer;
+    transition-duration: 500ms;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+}
+@mixin input-text {
+    border-style: solid;
+    border-color: $border-color;
+    border-radius: 5px;
+    width: 225px;
+    height: 43px;
+}

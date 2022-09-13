@@ -1,0 +1,49 @@
+<div class="modal">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" *ngIf="pokemon; else loading">
+        <div>
+            <h3>
+                <strong >Pokemon: {{pokemon.name}}</strong>
+            </h3>
+        </div>
+        <div class="grid">
+            <div>
+                <label>Nombre:*</label>
+                <input type="text" formControlName="name"  required>
+                <label class="value"><strong>valor actual:</strong> {{pokemon.name}}</label>
+            </div>
+            <div>
+                <label>Ataque:*</label>
+                <input type="range" min="0" max="100" formControlName="attack" #attack required>
+                <label>{{attack.value}}</label>
+                <label class="value"><strong>valor actual:</strong> {{pokemon.attack}}</label>
+            </div>
+            <div>
+                <label>Imagen:*</label>
+                <input type="text" formControlName="image" required>
+                <label class="value"><strong>valor actual:</strong> {{pokemon.image}}</label>
+            </div>
+            <div>
+                <label>Defensa:*</label>
+                <input type="range" min="0" max="100" formControlName="defense" #defense required>
+                <label>{{defense.value}}</label>
+                <label class="value"><strong>valor actual:</strong> {{pokemon.defense}}</label>
+            </div>
+            <div>
+                <label>Tipo:*</label>
+                <input type="text" formControlName="type" required>
+                <label class="value"><strong>valor actual:</strong> {{pokemon.type}}</label>
+            </div>
+            <div>
+                <label>Vida:*</label>
+                <input type="range" min="0" max="100"  formControlName="hp" #hp required>
+                <label>{{hp.value}}</label>
+                <label class="value"><strong>valor actual:</strong> {{pokemon.hp}}</label>
+            </div>
+        </div>
+        <div class="form__submit">
+            <input type="submit" value="Editar" [disabled]="!form.valid">
+            <input type="button" value="Cancelar" (click)="closeModal()" >
+        </div>
+    </form>
+    <ng-template #loading>Cargando...</ng-template>
+</div>

@@ -1,0 +1,9 @@
+<form>
+    <div class="search__input">
+        <input type="text" #search [(ngModel)]="browserText" name="search" (input)="searchHandler()" placeholder="Buscar">
+        <label class="material-symbols-outlined" *ngIf="!browserText">
+            search
+        </label>
+    </div>
+    <app-add-button></app-add-button>
+</form>

@@ -1,0 +1,28 @@
+@import "../../styles.scss";
+form {
+    width: clamp(200px, 100%, 927px);
+    margin: 0 auto;
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    .search__input {
+        position: relative;
+        width: fit-content;
+        height: -moz-fit-content;
+        height: fit-content;
+        label {
+            position: absolute;
+            top: 12px;
+            left: 5px;
+        }
+        input[type='text']{
+            @include input-text;
+            &:focus-visible {
+                outline: inherit;
+            }
+            &::placeholder{
+                padding-left: 25px;
+            }
+        }
+    }
+}
